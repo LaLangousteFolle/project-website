@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
@@ -21,12 +27,12 @@ export default function Portfolio() {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/LaLangousteFolle/repos"
+          "https://api.github.com/users/LaLangousteFolle/repos",
         );
         const data = await response.json();
         const formatted = data
           .sort((a: any, b: any) => b.stargazers_count - a.stargazers_count)
-          .slice(0, 6)
+          .slice(0, 11)
           .map((repo: any) => ({
             name: repo.name,
             description: repo.description || "No description",
@@ -64,7 +70,9 @@ export default function Portfolio() {
                     <CardHeader>
                       <div className="flex justify-between items-start">
                         <div>
-                          <CardTitle className="text-cyan-400">{repo.name}</CardTitle>
+                          <CardTitle className="text-cyan-400">
+                            {repo.name}
+                          </CardTitle>
                           <CardDescription>{repo.description}</CardDescription>
                         </div>
                       </div>
