@@ -22,7 +22,7 @@ export default function Home() {
             </p>
             <p className="text-slate-400">
               Passionné par le hardware, les systemes embarques, et les projets
-              open-source 
+              open-source
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export default function Home() {
             <Link href="/portfolio">
               <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
-                  <CardTitle>Portfolio</CardTitle>
+                  <CardTitle className="text-cyan-400">Portfolio</CardTitle>
                   <CardDescription>Mes petits projets GitHub</CardDescription>
                 </CardHeader>
               </Card>
@@ -40,7 +40,7 @@ export default function Home() {
             <Link href="/utils">
               <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
-                  <CardTitle>Utilities</CardTitle>
+                  <CardTitle className="text-cyan-400">Utilities</CardTitle>
                   <CardDescription>Outils de dev</CardDescription>
                 </CardHeader>
               </Card>
@@ -49,17 +49,19 @@ export default function Home() {
             <Link href="/chat">
               <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
-                  <CardTitle>Chatbot</CardTitle>
+                  <CardTitle className="text-cyan-400">Chatbot</CardTitle>
                   <CardDescription>[COMING SOON]</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
-            
+
             <Link href="/setup">
               <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
-                  <CardTitle>Setup</CardTitle>
-                  <CardDescription>La config de mon daily driver</CardDescription>
+                  <CardTitle className="text-cyan-400">Setup</CardTitle>
+                  <CardDescription>
+                    La config de mon daily driver
+                  </CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -67,8 +69,13 @@ export default function Home() {
 
           {/* Social Links */}
           <div className="flex justify-center gap-4 mt-12">
-            <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"asChild variant="outline">
+            <Button
+              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
+              asChild
+              variant="outline"
+            >
               <a
+                className="text-cyan-400"
                 href="https://github.com/LaLangousteFolle"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -76,8 +83,13 @@ export default function Home() {
                 GitHub
               </a>
             </Button>
-            <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition" asChild variant="outline">
+            <Button
+              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
+              asChild
+              variant="outline"
+            >
               <a
+                className="text-cyan-400"
                 href="https://steamcommunity.com/id/lehomard/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,14 +97,19 @@ export default function Home() {
                 Steam
               </a>
             </Button>
-              <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition" asChild variant="outline">
-                <a
-                  href="https://www.twitch.tv/lalangoustefolle"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Twitch
-                </a>
+            <Button
+              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
+              asChild
+              variant="outline"
+            >
+              <a
+                className="text-cyan-400"
+                href="https://www.twitch.tv/lalangoustefolle"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitch
+              </a>
             </Button>
           </div>
         </div>
