@@ -66,7 +66,7 @@ export default function Portfolio() {
             <div className="grid gap-6">
               {repos.map((repo) => (
                 <Link key={repo.name} href={repo.url} target="_blank">
-                  <Card className="hover:border-cyan-400 transition cursor-pointer">
+                  <Card className="!bg-slate-800/50 !border-slate-700 hover:!border-cyan-400 transition cursor-pointer">
                     <CardHeader>
                       <div className="flex justify-between items-start">
                         <div>

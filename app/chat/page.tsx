@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -47,7 +53,7 @@ export default function Chat() {
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <Card className="h-[600px] flex flex-col">
+          <Card className="bg-slate-800/50 border border-slate-700">
             <CardHeader>
               <CardTitle>AI Chatbot</CardTitle>
               <CardDescription>Powered by LM Studio (Local)</CardDescription>
