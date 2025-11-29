@@ -38,7 +38,7 @@ export default function Home() {
             </Link>
 
             <Link href="/utils">
-              <Card className="hover:border-cyan-400 cursor-pointer transition">
+              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Utilities</CardTitle>
                   <CardDescription>Outils de dev</CardDescription>
@@ -47,7 +47,7 @@ export default function Home() {
             </Link>
 
             <Link href="/chat">
-              <Card className="hover:border-cyan-400 cursor-pointer transition">
+              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Chatbot</CardTitle>
                   <CardDescription>[COMING SOON]</CardDescription>
@@ -56,7 +56,7 @@ export default function Home() {
             </Link>
             
             <Link href="/setup">
-              <Card className="hover:border-cyan-400 cursor-pointer transition">
+              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Setup</CardTitle>
                   <CardDescription>La config de mon daily driver</CardDescription>
@@ -67,7 +67,7 @@ export default function Home() {
 
           {/* Social Links */}
           <div className="flex justify-center gap-4 mt-12">
-            <Button asChild variant="outline">
+            <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"asChild variant="outline">
               <a
                 href="https://github.com/LaLangousteFolle"
                 target="_blank"
@@ -76,7 +76,7 @@ export default function Home() {
                 GitHub
               </a>
             </Button>
-            <Button asChild variant="outline">
+            <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition" asChild variant="outline">
               <a
                 href="https://steamcommunity.com/id/lehomard/"
                 target="_blank"
@@ -85,7 +85,7 @@ export default function Home() {
                 Steam
               </a>
             </Button>
-              <Button asChild variant="outline">
+              <Button className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition" asChild variant="outline">
                 <a
                   href="https://www.twitch.tv/lalangoustefolle"
                   target="_blank"
