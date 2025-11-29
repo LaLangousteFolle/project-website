@@ -1,122 +1,65 @@
-"use client";
-
-import * as React from "react";
-import {
-  ArchiveIcon,
-  ArrowLeftIcon,
-  CalendarPlusIcon,
-  ClockIcon,
-  ListFilterPlusIcon,
-  MailCheckIcon,
-  MoreHorizontalIcon,
-  TagIcon,
-  Trash2Icon,
-} from "lucide-react";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ButtonGroup } from "@/components/ui/button-group";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function ButtonGroupDemo() {
-  const [label, setLabel] = React.useState("personal");
-
+export default function Home() {
   return (
-    <ButtonGroup>
-      <ButtonGroup className="hidden sm:flex">
-        <Button variant="outline" size="icon" aria-label="Go Back">
-          <ArrowLeftIcon />
-        </Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Button variant="outline">Archive</Button>
-        <Button variant="outline">Report</Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Button variant="outline">Snooze</Button>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" aria-label="More Options">
-              <MoreHorizontalIcon />
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900">
+      <div className="container mx-auto px-4 py-20">
+        <div className="max-w-2xl mx-auto text-center space-y-8">
+          {/* Hero */}
+          <div className="space-y-4">
+            <h1 className="text-5xl font-bold text-white">
+              Salut, je suis <span className="text-cyan-400">LaLangousteFolle</span>
+            </h1>
+            <p className="text-xl text-slate-300">
+              CS Student • AI & ML Enthusiast • Web Developer
+            </p>
+            <p className="text-slate-400">
+              Passionné par l'infrastructure AI, le web dev, et les projets open-source
+            </p>
+          </div>
+
+          {/* CTA Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+            <Link href="/portfolio">
+              <Card className="hover:border-cyan-400 cursor-pointer transition">
+                <CardHeader>
+                  <CardTitle>Portfolio</CardTitle>
+                  <CardDescription>Mes projets GitHub</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+
+            <Link href="/utils">
+              <Card className="hover:border-cyan-400 cursor-pointer transition">
+                <CardHeader>
+                  <CardTitle>Utilities</CardTitle>
+                  <CardDescription>Outils de dev utiles</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+
+            <Link href="/chat">
+              <Card className="hover:border-cyan-400 cursor-pointer transition">
+                <CardHeader>
+                  <CardTitle>Chatbot</CardTitle>
+                  <CardDescription>AI Assistant</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-4 mt-12">
+            <Button asChild variant="outline">
+              <a href="https://github.com/LaLangousteFolle" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
             </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-52">
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <MailCheckIcon />
-                Mark as Read
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <ArchiveIcon />
-                Archive
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <ClockIcon />
-                Snooze
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <CalendarPlusIcon />
-                Add to Calendar
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <ListFilterPlusIcon />
-                Add to List
-              </DropdownMenuItem>
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger>
-                  <TagIcon />
-                  Label As...
-                </DropdownMenuSubTrigger>
-                <DropdownMenuSubContent>
-                  <DropdownMenuRadioGroup
-                    value={label}
-                    onValueChange={setLabel}
-                  >
-                    <DropdownMenuRadioItem value="personal">
-                      Personal
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="work">
-                      Work
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="other">
-                      Other
-                    </DropdownMenuRadioItem>
-                  </DropdownMenuRadioGroup>
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem variant="destructive">
-                <Trash2Icon />
-                Trash
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </ButtonGroup>
-    </ButtonGroup>
-  );
-}
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <ButtonGroup> Test </ButtonGroup>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
