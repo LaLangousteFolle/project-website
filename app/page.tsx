@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -10,13 +16,14 @@ export default function Home() {
           {/* Hero */}
           <div className="space-y-4">
             <h1 className="text-5xl font-bold text-white">
-              Salut, je suis <span className="text-cyan-400">LaLangousteFolle</span>
+              <span className="text-cyan-400">Hewoo :3</span>
             </h1>
             <p className="text-xl text-slate-300">
-              CS Student • AI & ML Enthusiast • Web Developer
+              CS Sutend • Streamer/Gamer • Certified BoyKisser
             </p>
             <p className="text-slate-400">
-              Passionné par l'infrastructure AI, le web dev, et les projets open-source
+              Passionné par l'infrastructure AI, le web dev, et les projets
+              open-source
             </p>
           </div>
 
@@ -26,7 +33,7 @@ export default function Home() {
               <Card className="hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Portfolio</CardTitle>
-                  <CardDescription>Mes projets GitHub</CardDescription>
+                  <CardDescription>Mes petits projets GitHub</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -35,7 +42,7 @@ export default function Home() {
               <Card className="hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Utilities</CardTitle>
-                  <CardDescription>Outils de dev utiles</CardDescription>
+                  <CardDescription>Outils de dev</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -44,7 +51,7 @@ export default function Home() {
               <Card className="hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Chatbot</CardTitle>
-                  <CardDescription>AI Assistant</CardDescription>
+                  <CardDescription>[COMING SOON]</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -53,8 +60,21 @@ export default function Home() {
           {/* Social Links */}
           <div className="flex justify-center gap-4 mt-12">
             <Button asChild variant="outline">
-              <a href="https://github.com/LaLangousteFolle" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/LaLangousteFolle"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a
+                href="https://steamcommunity.com/id/lehomard/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Steam
               </a>
             </Button>
           </div>
