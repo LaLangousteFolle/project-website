@@ -1,6 +1,11 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 const tools = [
@@ -58,7 +63,7 @@ export default function Utils() {
   const categories = [...new Set(tools.map((t) => t.category))];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="space-y-2">
@@ -68,23 +73,34 @@ export default function Utils() {
 
           {categories.map((category) => (
             <div key={category} className="space-y-4">
-              <h2 className="text-2xl font-semibold text-cyan-400">{category}</h2>
+              <h2 className="text-2xl font-semibold text-cyan-400">
+                {category}
+              </h2>
               <div className="grid gap-4">
                 {tools
                   .filter((t) => t.category === category)
                   .map((tool) => (
-                    <Card key={tool.name} className="bg-slate-800/50 border-slate-700">
+                    <Card
+                      key={tool.name}
+                      className="bg-slate-800/50 border-slate-700"
+                    >
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
                             <CardTitle>{tool.name}</CardTitle>
-                            <CardDescription>{tool.description}</CardDescription>
+                            <CardDescription>
+                              {tool.description}
+                            </CardDescription>
                           </div>
                         </div>
                       </CardHeader>
                       <CardContent>
                         <Button asChild size="sm">
-                          <Link href={tool.url} target="_blank" rel="noopener noreferrer">
+                          <Link
+                            href={tool.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             Visiter
                           </Link>
                         </Button>

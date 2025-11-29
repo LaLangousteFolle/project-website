@@ -61,7 +61,7 @@ export default function SetupPage() {
           </Card>
 
           {/* Section fun */}
-          <Card className="bg-slate-800/50 border-slate-700">
+          <Card className="!bg-slate-800/50 border-slate-700">
             <CardHeader>
               <CardTitle>🔥 En ce moment</CardTitle>
             </CardHeader>

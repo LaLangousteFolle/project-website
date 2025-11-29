@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           {/* Hero */}
