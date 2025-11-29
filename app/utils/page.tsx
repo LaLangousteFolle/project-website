@@ -87,7 +87,7 @@ export default function Utils() {
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
-                            <CardTitle>{tool.name}</CardTitle>
+                            <CardTitle className="text-cyan-200">{tool.name}</CardTitle>
                             <CardDescription>
                               {tool.description}
                             </CardDescription>

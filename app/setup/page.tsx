@@ -13,7 +13,7 @@ export default function SetupPage() {
           {/* PC */}
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
-              <CardTitle>💻 PC Principal</CardTitle>
+              <CardTitle className="text-cyan-200">💻 PC Principal</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
@@ -26,29 +26,10 @@ export default function SetupPage() {
             </CardContent>
           </Card>
 
-          {/* Steam Deck */}
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardHeader>
-              <CardTitle>🎮 Steam Deck (OS custom)</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Mon Steam Deck tourne sous EndeavourOS (Bazzite GNOME), avec
-                deux sessions :
-              </p>
-              <ul className="list-disc ml-6 mt-2 space-y-1">
-                <li>Session GNOME classique</li>
-                <li>
-                  Session “Steam Deck” → lance Steam GamepadUI via Gamescope
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
           {/* Périphériques */}
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
-              <CardTitle>🎧 Périphériques</CardTitle>
+              <CardTitle className="text-cyan-200">🎧 Périphériques</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
@@ -56,6 +37,9 @@ export default function SetupPage() {
                 <li>Clavier : Akko MOD007B HE</li>
                 <li>Souris : Logitech G502 Hero</li>
                 <li>Webcam : Logitech C270 HD</li>
+                <li>PC portable : Thinkpad Yoga X13</li>
+                <li>Steam deck : OS CUSTOM</li>
+                <li>Meta Quest 2</li>
               </ul>
             </CardContent>
           </Card>
@@ -63,7 +47,7 @@ export default function SetupPage() {
           {/* Section fun */}
           <Card className="bg-slate-800/50 border border-slate-700">
             <CardHeader>
-              <CardTitle>🔥 En ce moment</CardTitle>
+              <CardTitle className="text-cyan-200">🔥 En ce moment</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
