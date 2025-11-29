@@ -52,7 +52,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="space-y-2">
@@ -80,13 +80,13 @@ export default function Portfolio() {
                     <CardContent>
                       <div className="flex gap-2">
                         <Badge
-                          className="bg-slate-800/50 border-slate-700"
+                          className="bg-slate-800/50 border-slate-700 text-slate-400"
                           variant="secondary"
                         >
                           {repo.language}
                         </Badge>
                         <Badge
-                          className="bg-slate-800/50 border-slate-700"
+                          className="bg-slate-800/50 border-slate-700 text-slate-400"
                           variant="outline"
                         >
                           ⭐ {repo.stars}
