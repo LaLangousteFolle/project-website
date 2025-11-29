@@ -19,16 +19,16 @@ export default function Home() {
               <span className="text-cyan-400">Hewoo :3</span>
             </h1>
             <p className="text-xl text-slate-300">
-              CS Sutend • Streamer/Gamer • Certified BoyKisser
+              CS Sutent • Gamer • Certified BoyKisser
             </p>
             <p className="text-slate-400">
-              Passionné par l'infrastructure AI, le web dev, et les projets
-              open-source
+              Passionné par le hardware, les systemes embarques, et les projets
+              open-source 
             </p>
           </div>
 
           {/* CTA Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
             <Link href="/portfolio">
               <Card className="hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
@@ -76,6 +76,15 @@ export default function Home() {
               >
                 Steam
               </a>
+            </Button>
+              <Button asChild variant="outline">
+                <a
+                  href="https://www.twitch.tv/lalangoustefolle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitch
+                </a>
             </Button>
           </div>
         </div>
