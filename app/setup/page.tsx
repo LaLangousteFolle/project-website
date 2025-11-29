@@ -2,8 +2,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function SetupPage() {
   return (
-    <main className="max-w-3xl mx-auto p-6 space-y-8">
-      <h1 className="text-4xl font-bold">🎮 Mon Setup</h1>
+  <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-bold text-white">Mon setup</h1>
+          <p className="text-slate-400">Ma config de pc fixe</p>
+        </div>
 
       {/* PC */}
       <Card>
@@ -66,6 +71,9 @@ export default function SetupPage() {
           </ul>
         </CardContent>
       </Card>
-    </main>
+      </div>
+    </div>
+  </div>
   );
 }
+  
