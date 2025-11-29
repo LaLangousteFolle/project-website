@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -52,6 +51,15 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle>Chatbot</CardTitle>
                   <CardDescription>[COMING SOON]</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            
+            <Link href="/setup">
+              <Card className="hover:border-cyan-400 cursor-pointer transition">
+                <CardHeader>
+                  <CardTitle>Setup</CardTitle>
+                  <CardDescription>La config de mon daily driver</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
