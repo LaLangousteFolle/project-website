@@ -73,7 +73,7 @@ export default function Utils() {
                 {tools
                   .filter((t) => t.category === category)
                   .map((tool) => (
-                    <Card key={tool.name}>
+                    <Card key={tool.name} className="bg-slate-800/50 border-slate-700">
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
