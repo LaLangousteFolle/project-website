@@ -29,7 +29,7 @@ export default function Home() {
           {/* CTA Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
             <Link href="/portfolio">
-              <Card className="hover:border-cyan-400 cursor-pointer transition">
+              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
                 <CardHeader>
                   <CardTitle>Portfolio</CardTitle>
                   <CardDescription>Mes petits projets GitHub</CardDescription>
