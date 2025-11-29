@@ -5,16 +5,28 @@ import Link from "next/link";
 
 const tools = [
   {
-    name: "Cursor",
-    description: "AI-powered code editor",
-    category: "Editor",
-    url: "https://cursor.sh",
+    name: "Start-Page",
+    description: "My personal browser startpage",
+    category: "UTILS",
+    url: "https://boykissers-place.vercel.app/",
   },
   {
-    name: "LM Studio",
-    description: "Run local LLMs easily",
-    category: "AI",
-    url: "https://lmstudio.ai",
+    name: "ENT",
+    description: "My Uni ENT",
+    category: "UNIVERSITY",
+    url: "https://ent.univ-avignon.fr/uPortal/f/u24l1s7/normal/render.uP",
+  },
+  {
+    name: "EDT",
+    description: "My Uni schedule",
+    category: "UNIVERSITY",
+    url: "https://edt.univ-avignon.fr/",
+  },
+  {
+    name: "E-UAPV",
+    description: "My Uni Lectures",
+    category: "UNIVERSITY",
+    url: "https://e-uapv2025.univ-avignon.fr/my/courses.php",
   },
   {
     name: "Cloudflare Tunnel",
