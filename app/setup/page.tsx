@@ -17,11 +17,11 @@ export default function SetupPage() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
-                <li>GPU : RTX 3080</li>
-                <li>CPU : Intel i5-12600KF</li>
-                <li>Carte mère : Asus PRIME B660-PLUS (DDR4)</li>
-                <li>RAM : 32 Go DDR4</li>
-                <li>Écrans : Gigabyte M27Q + Samsung T35F</li>
+                <li className="text-cyan-400">GPU : RTX 3080</li>
+                <li className="text-blue-400">CPU : Intel i5-12600KF</li>
+                <li className="text-teal-400">Carte mère : Asus PRIME B660-PLUS (DDR4)</li>
+                <li className="text-cyan-300">RAM : 32 Go DDR4</li>
+                <li className="text-blue-300">Écrans : Gigabyte M27Q + Samsung T35F</li>
               </ul>
             </CardContent>
           </Card>
@@ -33,13 +33,13 @@ export default function SetupPage() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
-                <li>Micro + Casque : HyperX Cloud II</li>
-                <li>Clavier : Akko MOD007B HE</li>
-                <li>Souris : Logitech G502 Hero</li>
-                <li>Webcam : Logitech C270 HD</li>
-                <li>PC portable : Thinkpad Yoga X13</li>
-                <li>Steam deck : OS CUSTOM</li>
-                <li>Meta Quest 2</li>
+                <li className="text-cyan-400 font-medium">• Micro + Casque : HyperX Cloud II</li>
+                  <li className="text-blue-400 font-medium">• Clavier : Akko MOD007B HE</li>
+                  <li className="text-teal-400 font-medium">• Souris : Logitech G502 Hero</li>
+                  <li className="text-cyan-300 font-medium">• Webcam : Logitech C270 HD</li>
+                  <li className="text-blue-300 font-medium">• PC portable : Thinkpad Yoga X13</li>
+                  <li className="text-teal-300 font-medium">• Steam deck : OS CUSTOM</li>
+                  <li className="text-cyan-400 font-medium">• Meta Quest 2</li>
               </ul>
             </CardContent>
           </Card>
@@ -51,11 +51,11 @@ export default function SetupPage() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc ml-6 space-y-1">
-                <li>
+                <li className="text-cyan-400">
                   Jeux : Hunt Showdown, Overwatch, Dead by daylight ect...
                 </li>
-                <li>Musique : LoFi / OST</li>
-                <li>Projets : Loups-Garous Web + backend IA et ce site web</li>
+                <li className="text-blue-400">Musique : LoFi / OST</li>
+                <li className="text-teal-400">Projets : Loups-Garous Web + backend IA et ce site web</li>
               </ul>
             </CardContent>
           </Card>
