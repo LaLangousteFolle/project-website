@@ -11,7 +11,8 @@ export default function SetupPage() {
           </div>
 
           {/* PC */}
-          <Card className="bg-slate-800/50 border-slate-700">
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl">
+            <Card className="bg-transparent border-none shadow-none">
             <CardHeader>
               <CardTitle>💻 PC Principal</CardTitle>
             </CardHeader>
@@ -61,7 +62,7 @@ export default function SetupPage() {
           </Card>
 
           {/* Section fun */}
-          <Card className="!bg-slate-800/50 border-slate-700">
+          <Card className="bg-slate-800/50 border border-slate-700">
             <CardHeader>
               <CardTitle>🔥 En ce moment</CardTitle>
             </CardHeader>
