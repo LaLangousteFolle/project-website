@@ -12,23 +12,29 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-800">
       <div className="container mx-auto px-4 py-20">
-        <div className="max-w-2xl mx-auto text-center space-y-8">
-          {/* Hero */}
-          <div className="space-y-4">
-            <h1 className="text-5xl font-bold text-white">
-              <span className="text-cyan-400">Hewoo :3</span>
-            </h1>
-            <p className="text-xl text-slate-300">
-              CS Sutent • Gamer • Certified BoyKisser
-            </p>
-            <p className="text-slate-400">
-              Passionné par le hardware, les systemes embarques, et les projets
-              open-source
-            </p>
+        {/* HERO + REQUIN EN GRID */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] items-center">
+            {/* Texte hero */}
+            <div className="space-y-4 text-center md:text-left">
+              <h1 className="text-5xl font-bold text-white">
+                <span className="text-cyan-400">Hewoo :3</span>
+              </h1>
+              <p className="text-xl text-slate-300">
+                CS Sutent • Gamer • Certified BoyKisser
+              </p>
+              <p className="text-slate-400">
+                Passionné par le hardware, les systemes embarques, et les projets
+                open-source
+              </p>
+            </div>
+    
+            {/* Requin 3D */}
+            <div className="flex justify-center md:justify-end">
+              <Shark3D />
+            </div>
           </div>
-          <div className="flex justify-center md:justify-end">
-            <Shark3D />
-          </div>
+        </div>
 
           {/* CTA Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
