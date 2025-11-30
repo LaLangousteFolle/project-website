@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Shark3D } from "@/components/Shark3D";
+import { NowPlayingCard } from "@/components/NowPlayingCard";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
                 Passionné par le hardware, les systèmes embarqués, et les
                 projets open-source
               </p>
+              <NowPlayingCard />
             </div>
 
             {/* Requin 3D */}

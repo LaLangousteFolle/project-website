@@ -10,13 +10,13 @@ export default function Navbar() {
         </Link>
 
         <div className="flex gap-4">
-          <Button asChild variant="ghost">
+          <Button className="text-cyan-200" asChild variant="ghost">
             <Link href="/portfolio">Portfolio</Link>
           </Button>
-          <Button asChild variant="ghost">
+          <Button className="text-cyan-200" asChild variant="ghost">
             <Link href="/utils">Utils</Link>
           </Button>
-          <Button asChild variant="ghost">
+          <Button className="text-cyan-200" asChild variant="ghost">
             <Link href="/chat">Chat</Link>
           </Button>
         </div>
