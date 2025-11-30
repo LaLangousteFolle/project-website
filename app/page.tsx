@@ -13,10 +13,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-800">
       <div className="container mx-auto px-4 py-20">
-        {/* HERO + REQUIN EN GRID */}
         <div className="max-w-4xl mx-auto">
           <div className="grid gap-10 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] items-center">
-            {/* Texte hero */}
             <div className="space-y-4 text-center md:text-left">
               <h1 className="text-5xl font-bold text-white">
                 <span className="text-cyan-400">Hewoo :3</span>
@@ -31,14 +29,12 @@ export default function Home() {
               <NowPlayingCard />
             </div>
 
-            {/* Requin 3D */}
             <div className="flex justify-center md:justify-end">
               <Shark3D />
             </div>
           </div>
         </div>
 
-        {/* CTA Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
           <Link href="/portfolio">
             <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
@@ -77,7 +73,6 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Social Links */}
         <div className="flex justify-center gap-4 mt-12">
           <Button
             variant="outline"
