@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Shark3D } from "@/components/Shark3D";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
               Passionné par le hardware, les systemes embarques, et les projets
               open-source
             </p>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <Shark3D />
           </div>
 
           {/* CTA Cards */}
