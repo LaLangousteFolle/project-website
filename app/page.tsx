@@ -24,11 +24,11 @@ export default function Home() {
                 CS Sutent • Gamer • Certified BoyKisser
               </p>
               <p className="text-slate-400">
-                Passionné par le hardware, les systemes embarques, et les projets
-                open-source
+                Passionné par le hardware, les systèmes embarqués, et les
+                projets open-source
               </p>
             </div>
-    
+
             {/* Requin 3D */}
             <div className="flex justify-center md:justify-end">
               <Shark3D />
@@ -36,93 +36,90 @@ export default function Home() {
           </div>
         </div>
 
-          {/* CTA Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
-            <Link href="/portfolio">
-              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
-                <CardHeader>
-                  <CardTitle className="text-cyan-400">Portfolio</CardTitle>
-                  <CardDescription>Mes petits projets GitHub</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
+        {/* CTA Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-12">
+          <Link href="/portfolio">
+            <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
+              <CardHeader>
+                <CardTitle className="text-cyan-400">Portfolio</CardTitle>
+                <CardDescription>Mes petits projets GitHub</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
 
-            <Link href="/utils">
-              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
-                <CardHeader>
-                  <CardTitle className="text-cyan-400">Utilities</CardTitle>
-                  <CardDescription>Outils de dev</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
+          <Link href="/utils">
+            <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
+              <CardHeader>
+                <CardTitle className="text-cyan-400">Utilities</CardTitle>
+                <CardDescription>Outils de dev</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
 
-            <Link href="/chat">
-              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
-                <CardHeader>
-                  <CardTitle className="text-cyan-400">Chatbot</CardTitle>
-                  <CardDescription>[COMING SOON]</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
+          <Link href="/chat">
+            <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
+              <CardHeader>
+                <CardTitle className="text-cyan-400">Chatbot</CardTitle>
+                <CardDescription>[COMING SOON]</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
 
-            <Link href="/setup">
-              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
-                <CardHeader>
-                  <CardTitle className="text-cyan-400">Setup</CardTitle>
-                  <CardDescription>
-                    La config de mon daily driver
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          </div>
+          <Link href="/setup">
+            <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition">
+              <CardHeader>
+                <CardTitle className="text-cyan-400">Setup</CardTitle>
+                <CardDescription>La config de mon daily driver</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+        </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center gap-4 mt-12">
-            <Button
-              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
-              asChild
-              variant="outline"
+        {/* Social Links */}
+        <div className="flex justify-center gap-4 mt-12">
+          <Button
+            variant="outline"
+            className="bg-slate-800/50 border-slate-700 hover:bg-slate-600/80 hover:text-cyan-400 hover:border-cyan-400"
+          >
+            <a
+              className="text-cyan-400"
+              href="https://github.com/LaLangousteFolle"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                className="text-cyan-400"
-                href="https://github.com/LaLangousteFolle"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </Button>
-            <Button
-              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
-              asChild
-              variant="outline"
+              GitHub
+            </a>
+          </Button>
+          <Button
+            className="bg-slate-800/50 border-slate-700 hover:bg-slate-600/80 hover:text-cyan-400 hover:border-cyan-400"
+            asChild
+            variant="outline"
+          >
+            <a
+              className="text-cyan-400"
+              href="https://steamcommunity.com/id/lehomard/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                className="text-cyan-400"
-                href="https://steamcommunity.com/id/lehomard/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Steam
-              </a>
-            </Button>
-            <Button
-              className="bg-slate-800/50 border-slate-700 hover:border-cyan-400 cursor-pointer transition"
-              asChild
-              variant="outline"
+              Steam
+            </a>
+          </Button>
+          <Button
+            className="bg-slate-800/50 border-slate-700 hover:bg-slate-600/80 hover:text-cyan-400 hover:border-cyan-400"
+            asChild
+            variant="outline"
+          >
+            <a
+              className="text-cyan-400"
+              href="https://www.twitch.tv/lalangoustefolle"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                className="text-cyan-400"
-                href="https://www.twitch.tv/lalangoustefolle"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitch
-              </a>
-            </Button>
-          </div>
+              Twitch
+            </a>
+          </Button>
         </div>
       </div>
+    </div>
   );
 }
