@@ -85,58 +85,52 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          {/* hauteur fixe, overflow caché */}
-          <Card className="h-[600px] bg-slate-900/80 border-slate-800 shadow-xl overflow-hidden flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-cyan-400">
-                Local Chat • LM Studio
-              </CardTitle>
-            </CardHeader>
+    <Card className="max-h-[600px] bg-slate-900/80 border-slate-800 shadow-xl overflow-hidden flex flex-col">
+      <CardHeader>
+        <CardTitle className="text-cyan-400">
+          Local Chat • LM Studio
+        </CardTitle>
+      </CardHeader>
 
-            <CardContent className="flex flex-col flex-1 pt-0">
-              {/* zone messages: seule partie scrollable */}
-              <div className="flex-1 mb-3 pr-2 overflow-y-auto space-y-3">
-                {messages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className={`flex ${
-                      msg.role === "user" ? "justify-end" : "justify-start"
-                    }`}
-                  >
-                    <div
-                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed break-words ${
-                        msg.role === "user"
-                          ? "bg-cyan-600 text-white rounded-br-sm"
-                          : "bg-slate-800 text-slate-100 rounded-bl-sm"
-                      }`}
-                    >
-                      {msg.content}
-                    </div>
-                  </div>
-                ))}
-                <div ref={bottomRef} />
+      <CardContent className="flex flex-col flex-1 pt-0">
+        {/* hauteur fixe de la zone messages */}
+        <div className="h-[420px] mb-3 pr-2 overflow-y-auto space-y-3">
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className={`flex ${
+                msg.role === "user" ? "justify-end" : "justify-start"
+              }`}
+            >
+              <div
+                className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed break-words ${
+                  msg.role === "user"
+                    ? "bg-cyan-600 text-white rounded-br-sm"
+                    : "bg-slate-800 text-slate-100 rounded-bl-sm"
+                }`}
+              >
+                {msg.content}
               </div>
+            </div>
+          ))}
+          <div ref={bottomRef} />
+        </div>
 
-              {/* input fixé en bas du bloc */}
-              <div className="flex gap-2">
-                <Input
-                  placeholder="Écris ton message..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  disabled={loading}
-                />
-                <Button onClick={sendMessage} disabled={loading}>
-                  {loading ? "..." : "Envoyer"}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="flex gap-2">
+          <Input
+            placeholder="Écris ton message..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            disabled={loading}
+          />
+          <Button onClick={sendMessage} disabled={loading}>
+            {loading ? "..." : "Envoyer"}
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
         </div>
       </div>
-    </div>
   );
 }
