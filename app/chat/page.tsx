@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { MarkdownMessage } from "@/components/MarkdownMessage";
 
 type Message = {
   id: number;
@@ -96,7 +97,6 @@ export default function ChatPage() {
             </CardHeader>
 
             <CardContent className="flex flex-col flex-1 pt-0">
-              {/* zone messages scrollable uniquement dans la card */}
               <div className="h-[420px] mb-3 pr-2 overflow-y-auto space-y-3">
                 {messages.map((msg) => (
                   <div
@@ -112,14 +112,17 @@ export default function ChatPage() {
                           : "bg-slate-800 text-slate-100 rounded-bl-sm"
                       }`}
                     >
-                      {msg.content}
+                      {msg.role === "assistant" ? (
+                        <MarkdownMessage content={msg.content} />
+                      ) : (
+                        msg.content
+                      )}
                     </div>
                   </div>
                 ))}
                 <div ref={bottomRef} />
               </div>
 
-              {/* input fixé en bas de la card */}
               <div className="flex gap-2 text-white">
                 <Input
                   placeholder="Écris ton message..."
