@@ -57,21 +57,14 @@ export default function ChatPage() {
 
       const data = await res.json();
 
-      if (data.error) {
-        const errorMsg: Message = {
-          id: Date.now() + 1,
-          role: "assistant",
-          content: "Erreur lors de la requête vers LM Studio.",
-        };
-        setMessages((prev) => [...prev, errorMsg]);
-      } else {
-        const botMessage: Message = {
-          id: Date.now() + 1,
-          role: "assistant",
-          content: data.content,
-        };
-        setMessages((prev) => [...prev, botMessage]);
-      }
+      const botMessage: Message = {
+        id: Date.now() + 1,
+        role: "assistant",
+        content: data.error
+          ? "Erreur lors de la requête vers LM Studio."
+          : data.content,
+      };
+      setMessages((prev) => [...prev, botMessage]);
     } catch {
       const errorMsg: Message = {
         id: Date.now() + 1,
@@ -95,16 +88,17 @@ export default function ChatPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <Card className="h-[600px] flex flex-col bg-slate-900/80 border-slate-800 shadow-xl">
+          {/* hauteur fixe, overflow caché */}
+          <Card className="h-[600px] bg-slate-900/80 border-slate-800 shadow-xl overflow-hidden flex flex-col">
             <CardHeader>
               <CardTitle className="text-cyan-400">
                 Local Chat • LM Studio
               </CardTitle>
             </CardHeader>
 
-            <CardContent className="flex flex-col flex-1">
-              {/* zone de messages scrollable, mais la card garde le look d'avant */}
-              <div className="flex-1 mb-4 pr-2 overflow-y-auto space-y-3">
+            <CardContent className="flex flex-col flex-1 pt-0">
+              {/* zone messages: seule partie scrollable */}
+              <div className="flex-1 mb-3 pr-2 overflow-y-auto space-y-3">
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
@@ -113,7 +107,7 @@ export default function ChatPage() {
                     }`}
                   >
                     <div
-                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed ${
+                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed break-words ${
                         msg.role === "user"
                           ? "bg-cyan-600 text-white rounded-br-sm"
                           : "bg-slate-800 text-slate-100 rounded-bl-sm"
@@ -126,7 +120,7 @@ export default function ChatPage() {
                 <div ref={bottomRef} />
               </div>
 
-              {/* input + bouton comme avant, fixé en bas de la card */}
+              {/* input fixé en bas du bloc */}
               <div className="flex gap-2">
                 <Input
                   placeholder="Écris ton message..."
