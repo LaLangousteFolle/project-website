@@ -120,7 +120,7 @@ export default function ChatPage() {
               </div>
 
               {/* input fixé en bas de la card */}
-              <div className="flex gap-2">
+              <div className="flex gap-2 text-white">
                 <Input
                   placeholder="Écris ton message..."
                   value={input}
