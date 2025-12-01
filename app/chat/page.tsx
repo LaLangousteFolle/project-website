@@ -87,13 +87,10 @@ export default function ChatPage() {
   return (
     <Card className="max-h-[600px] bg-slate-900/80 border-slate-800 shadow-xl overflow-hidden flex flex-col">
       <CardHeader>
-        <CardTitle className="text-cyan-400">
-          Local Chat • LM Studio
-        </CardTitle>
+        <CardTitle className="text-cyan-400">Local Chat • LM Studio</CardTitle>
       </CardHeader>
 
       <CardContent className="flex flex-col flex-1 pt-0">
-        {/* hauteur fixe de la zone messages */}
         <div className="h-[420px] mb-3 pr-2 overflow-y-auto space-y-3">
           {messages.map((msg) => (
             <div
@@ -115,7 +112,6 @@ export default function ChatPage() {
           ))}
           <div ref={bottomRef} />
         </div>
-
         <div className="flex gap-2">
           <Input
             placeholder="Écris ton message..."
@@ -130,7 +126,5 @@ export default function ChatPage() {
         </div>
       </CardContent>
     </Card>
-        </div>
-      </div>
   );
 }
