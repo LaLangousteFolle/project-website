@@ -17,8 +17,23 @@ export default function ChatPage() {
     {
       id: 1,
       role: "assistant",
-      content:
-        "Salut! Je suis ton IA locale via LM Studio. Envoie-moi un message pour commencer.",
+      content: `# Titre
+
+  **gras** et *italique*
+
+  - item 1
+  - item 2
+
+  \`code inline\`
+
+  \`\`\`ts
+  console.log("hello");
+  \`\`\`
+
+  \\[
+  x^2 + 1 = 0
+  \\]
+  `,
     },
   ]);
   const [input, setInput] = useState("");

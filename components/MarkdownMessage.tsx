@@ -1,12 +1,20 @@
 "use client";
 
-import ReactMarkdown from "react-markdown";
+import type { Components } from "react-markdown";
+import ReactMarkdown_ from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 type Props = {
   content: string;
 };
+
+const ReactMarkdown = ReactMarkdown_ as React.ComponentType<{
+  children: string;
+  remarkPlugins?: any[];
+  rehypePlugins?: any[];
+  components?: Components;
+}>;
 
 export function MarkdownMessage({ content }: Props) {
   return (
