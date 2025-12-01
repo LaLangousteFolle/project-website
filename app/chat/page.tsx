@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 type Message = {
   id: number;
@@ -23,6 +22,12 @@ export default function ChatPage() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const sendMessage = async () => {
     const content = input.trim();
@@ -67,7 +72,7 @@ export default function ChatPage() {
         };
         setMessages((prev) => [...prev, botMessage]);
       }
-    } catch (e) {
+    } catch {
       const errorMsg: Message = {
         id: Date.now() + 1,
         role: "assistant",
@@ -86,58 +91,58 @@ export default function ChatPage() {
     }
   };
 
-  const bottomRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
   return (
-    <Card className="h-[600px] flex flex-col bg-slate-900/70 border-slate-800">
-      <CardHeader>
-        <CardTitle className="text-cyan-400">Local Chat • LM Studio</CardTitle>
-      </CardHeader>
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
+          <Card className="h-[600px] flex flex-col bg-slate-900/80 border-slate-800 shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-cyan-400">
+                Local Chat • LM Studio
+              </CardTitle>
+            </CardHeader>
 
-      <CardContent className="flex flex-col flex-1">
-        {/* Zone scrollable dans la card */}
-        <ScrollArea className="flex-1 pr-3 mb-4">
-          <div className="space-y-3">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex ${
-                  msg.role === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
-                <div
-                  className={`max-w-[80%] px-3 py-2 rounded-lg text-sm ${
-                    msg.role === "user"
-                      ? "bg-cyan-600 text-white"
-                      : "bg-slate-800 text-slate-100"
-                  }`}
-                >
-                  {msg.content}
-                </div>
+            <CardContent className="flex flex-col flex-1">
+              {/* zone de messages scrollable, mais la card garde le look d'avant */}
+              <div className="flex-1 mb-4 pr-2 overflow-y-auto space-y-3">
+                {messages.map((msg) => (
+                  <div
+                    key={msg.id}
+                    className={`flex ${
+                      msg.role === "user" ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    <div
+                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed ${
+                        msg.role === "user"
+                          ? "bg-cyan-600 text-white rounded-br-sm"
+                          : "bg-slate-800 text-slate-100 rounded-bl-sm"
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
+                  </div>
+                ))}
+                <div ref={bottomRef} />
               </div>
-            ))}
-            <div ref={bottomRef} />
-          </div>
-        </ScrollArea>
 
-        {/* Input + bouton en bas de la card */}
-        <div className="flex gap-2">
-          <Input
-            placeholder="Écris ton message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={loading}
-          />
-          <Button onClick={sendMessage} disabled={loading}>
-            {loading ? "..." : "Envoyer"}
-          </Button>
+              {/* input + bouton comme avant, fixé en bas de la card */}
+              <div className="flex gap-2">
+                <Input
+                  placeholder="Écris ton message..."
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  disabled={loading}
+                />
+                <Button onClick={sendMessage} disabled={loading}>
+                  {loading ? "..." : "Envoyer"}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
