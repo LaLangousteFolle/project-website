@@ -1,5 +1,5 @@
 "use client";
-
+export const dynamic = "error";
 import { useState, useEffect, useRef } from "react";
 import { useSession, signIn } from "next-auth/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -129,7 +129,7 @@ x^2 + 1 = 0
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <Card className="max-h-[600px] bg-slate-900/80 border-slate-800 shadow-xl overflow-hidden flex flex-col">
@@ -149,7 +149,7 @@ x^2 + 1 = 0
                     }`}
                   >
                     <div
-                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed break-words ${
+                      className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm leading-relaxed wrap-break-words ${
                         msg.role === "user"
                           ? "bg-cyan-600 text-white rounded-br-sm"
                           : "bg-slate-800 text-slate-100 rounded-bl-sm"
