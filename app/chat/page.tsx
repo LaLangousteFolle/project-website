@@ -1,5 +1,5 @@
 "use client";
-export const dynamic = "error";
+export const dynamic = "force-dynamic"; 
 import { useState, useEffect, useRef } from "react";
 import { useSession, signIn } from "next-auth/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
