@@ -52,10 +52,34 @@ const tools = [
     url: "https://ui.shadcn.com",
   },
   {
+    name: "Catppuccin",
+    description: "Famous Catppucin color palet",
+    category: "UI",
+    url: "https://catppuccin.com",
+  },
+  {
+    name: "Nord",
+    description: "Nord theme palet",
+    category: "UI",
+    url: "https://www.nordtheme.com",
+  },
+  {
+    name: "Colpat",
+    description: "An awesome palet generator",
+    category: "UI",
+    url: "https://colpat.itsvg.in",
+  },
+  {
     name: "Anki",
     description: "Spaced repetition flashcard system",
     category: "Learning",
     url: "https://ankiweb.net",
+  },
+  {
+    name: "Leetcode",
+    description: "Exercises",
+    categorie: "Learning",
+    url: "https://leetcode.com/",
   },
 ];
 

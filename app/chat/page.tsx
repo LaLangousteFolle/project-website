@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useSession, signIn } from "next-auth/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,32 +14,33 @@ type Message = {
 };
 
 export default function ChatPage() {
+  const { status } = useSession();
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
       role: "assistant",
       content: `# Titre
 
-  **gras** et *italique*
+**gras** et *italique*
 
-  - item 1
-  - item 2
+- item 1
+- item 2
 
-  \`code inline\`
+\`code inline\`
 
-  \`\`\`ts
-  console.log("hello");
-  \`\`\`
+\`\`\`ts
+console.log("hello");
+\`\`\`
 
-  \\[
-  x^2 + 1 = 0
-  \\]
-  `,
+\\[
+x^2 + 1 = 0
+\\]
+`,
     },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -100,6 +102,32 @@ export default function ChatPage() {
     }
   };
 
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-100">
+        Chargement de la session...
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-100">
+        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-6 text-center space-y-4">
+          <p className="text-lg font-semibold">
+            Connecte-toi pour utiliser le chat IA.
+          </p>
+          <Button
+            onClick={() => signIn("github")}
+            className="bg-cyan-600 hover:bg-cyan-500"
+          >
+            Se connecter avec GitHub
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 py-12">
       <div className="container mx-auto px-4">
@@ -127,11 +155,7 @@ export default function ChatPage() {
                           : "bg-slate-800 text-slate-100 rounded-bl-sm"
                       }`}
                     >
-                      {msg.role === "assistant" ? (
-                        <MarkdownMessage content={msg.content} />
-                      ) : (
-                        msg.content
-                      )}
+                      <MarkdownMessage content={msg.content} />
                     </div>
                   </div>
                 ))}
