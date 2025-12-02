@@ -14,7 +14,8 @@ type Message = {
 };
 
 export default function ChatPage() {
-  const { status } = useSession();
+  const sessionData = useSession();
+  const { status } = sessionData || {}; // Ajout d'une vérification de sécurité
 
   const [messages, setMessages] = useState<Message[]>([
     {
