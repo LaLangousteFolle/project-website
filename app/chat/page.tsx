@@ -15,29 +15,13 @@ type Message = {
 
 export default function ChatPage() {
   const sessionData = useSession();
-  const { status } = sessionData || {}; // Ajout d'une vérification de sécurité
+  const { status } = sessionData || {}; 
 
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
       role: "assistant",
-      content: `# Titre
-
-**gras** et *italique*
-
-- item 1
-- item 2
-
-\`code inline\`
-
-\`\`\`ts
-console.log("hello");
-\`\`\`
-
-\\[
-x^2 + 1 = 0
-\\]
-`,
+      content: 'Salut, je suis ton assistant local',
     },
   ]);
   const [input, setInput] = useState("");
