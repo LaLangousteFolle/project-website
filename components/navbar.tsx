@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="border-b border-slate-800 bg-slate-950">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-cyan-400">
-          LaLangousteFolle
+          Nono
         </Link>
 
         <div className="flex gap-4">
@@ -18,6 +18,9 @@ export default function Navbar() {
           </Button>
           <Button className="text-cyan-200" asChild variant="ghost">
             <Link href="/chat">Chat</Link>
+          </Button>
+          <Button className="text-cyan-200" asChild variant ="ghost">
+            <Link href="/setup">Setup</Link>
           </Button>
         </div>
       </div>

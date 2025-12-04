@@ -20,7 +20,7 @@ export default function Home() {
                 <span className="text-cyan-400">Hewoo :3</span>
               </h1>
               <p className="text-xl text-slate-300">
-                CS Sutent • Gamer • Certified BoyKisser
+                CS Student • Gamer • Certified BoyKisser
               </p>
               <p className="text-slate-400">
                 Passionné par le hardware, les systèmes embarqués, et les

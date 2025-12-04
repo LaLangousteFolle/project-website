@@ -20,7 +20,6 @@ export function NowPlayingCard() {
   const [lastUpdate, setLastUpdate] = useState<number | null>(null);
   const [tick, setTick] = useState(0);
 
-  // Fetch toutes les 5s
   useEffect(() => {
     const fetchNowPlaying = async () => {
       const res = await fetch("/api/spotify/now-playing");
