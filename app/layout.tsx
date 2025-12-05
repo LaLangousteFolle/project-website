@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,23 +9,16 @@ import "katex/dist/katex.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "LaLangousteFolle | Portfolio",
-  description: "CS student • AI enthusiast • Developer",
-};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import { SessionProvider } from "next-auth/react";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Analytics />
+      <body>
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );
 }
+
